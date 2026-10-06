@@ -1,17 +1,11 @@
-# Strict, officially supported syntax schema layout for SAP Integration Suite Artifacts 2.0
+---
 general:
-  pipelineVersion: "2.0"
-
+  cpiApiServiceKeyCredentialsId: "cpi"
+  integrationFlowId: "GS3_to_GCS_Contract_PDF_Upload"
 stages:
   Upload:
-    enabled: true
-    # Native 2.0 configuration structure to activate the built-in lint execution block
-    sapCPILint:
-      enabled: true
-      rulesFile: "cpilint-rules.xml"
-
+    enabled: false
   Deploy:
-    enabled: true
-
-  'Integration Test':
+    enabled: false
+  Integration Test:
     enabled: false

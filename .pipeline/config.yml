@@ -1,10 +1,15 @@
+# Strict, officially supported syntax schema layout for SAP Integration Suite Artifacts 2.0
+general:
+  pipelineVersion: "2.0"
+
 stages:
   Upload:
     enabled: true
-    # Triggers CPILint internally during the package assembly phase
-    tool: "cpilint"
-    rulesFile: "cpilint-rules.xml"
-    
+    # Native 2.0 configuration structure to activate the built-in lint execution block
+    sapCPILint:
+      enabled: true
+      rulesFile: "cpilint-rules.xml"
+
   Deploy:
     enabled: true
 

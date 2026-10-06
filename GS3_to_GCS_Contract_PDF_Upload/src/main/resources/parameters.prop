@@ -1,0 +1,30 @@
+#Mon Jul 27 11:10:42 UTC 2026
+Authentication=user_password
+Bucket=contract_management
+ClientEmail=s6-na-git-d-gss-cnrct-int-sa@prj-na-gss-d-589.iam.gserviceaccount.com
+Contract=//Contract/Code
+EnableAlert=true
+Environment=QA
+FileName=//Contract/file_name
+GCSDirectory=gs3_contract_details/non-prod/Metadata
+GS3Login=${property.GS3_LOGIN_URL}
+GS3PDF=${header.CamelHttpUri}
+MailAddress=mailhost.whirlpool.com
+MailBody=<html> <br> Hi Team, <br> <br> Please note a message failed in Cloud Integration ${property.Environment} tenant, refer below table for more details <br> <br> <table width\="900" border\="1" cellspacing\="0" cellpadding\="0" style\="border\:2px solid \#ccc;"> <tr> <td>iFlow Name</td> <td>${camelId}</td> </tr> <tr> <td>Date & Time of Failure</td> <td>${date\:now\:yyyy-MM-dd'T'hh\:mm\:ss'Z'}</td> </tr> <tr> <td>Message Processing Log Id</td> <td>${property.SAP_MessageProcessingLogID}</td> </tr> <tr> <td>Error Message</td> <td>${property.CamelExceptionCaught}</td> </tr> <tr> <td>Navigate to failed message using this link</td> <td><a href\="https\://${property.TenantName}/shell/monitoring/Messages/%7B%22identifier%22%3A%22${property.SAP_MessageProcessingLogID}%22%7D">Error Message</a></td> </tr>  </table> <br> <br> Thanks, <br> SAP Integration Support Team <br> <br> <i>This is an auto-generated email from the middleware (SAP Cloud Integration). Please do not reply to this email.</i> </html>
+MailFrom=mdl-sapbtp-scpi-support@whirlpool.com
+MailSubject=Error in Cloud Integration ${property.TenantType} System \: ${camelId}
+MailTo=mdl-sapbtp-scpi-support@whirlpool.com; dileep_k_sharma@whirlpool.com; shashank_s_kondawar_accenture@whirlpool.com; shaija_nair@whirlpool.com;; tharun_sathiyamurthy_accenture@whirlpool.com
+PDFDirectory=gs3_contract_details/non-prod/SCPIUAT/${property.VendorRegion}/${property.VendorNumber}/${property.Contract}
+PDFFileName=${property.FileName}
+Parallel=2
+PrivateKey=na-gss-poc
+Region=//Contract/Region
+Scheduler=<row><cell>dayValue</cell><cell></cell></row><row><cell>monthValue</cell><cell></cell></row><row><cell>yearValue</cell><cell></cell></row><row><cell>dateType</cell><cell>DAILY</cell></row><row><cell>secondValue</cell><cell>0</cell></row><row><cell>minutesValue</cell><cell></cell></row><row><cell>hourValue</cell><cell></cell></row><row><cell>toInterval</cell><cell>24</cell></row><row><cell>fromInterval</cell><cell>0</cell></row><row><cell>OnEverySecond</cell><cell>5</cell></row><row><cell>timeType</cell><cell>TIME_SECOND_INTERVAL</cell></row><row><cell>timeZone</cell><cell>( UTC 0\:00 ) Greenwich Mean Time(Etc/GMT)</cell></row><row><cell>throwExceptionOnExpiry</cell><cell>true</cell></row><row><cell>second</cell><cell>0/10</cell></row><row><cell>minute</cell><cell>*</cell></row><row><cell>hour</cell><cell>0-24</cell></row><row><cell>day_of_month</cell><cell>?</cell></row><row><cell>month</cell><cell>*</cell></row><row><cell>dayOfWeek</cell><cell>*</cell></row><row><cell>year</cell><cell>*</cell></row><row><cell>startAt</cell><cell></cell></row><row><cell>endAt</cell><cell></cell></row><row><cell>attributeBehaviour</cell><cell>isScheduleOnDayRequired,isScheduleRecurRequired,isScheduleAdvancedVisible</cell></row><row><cell>triggerType</cell><cell>cron</cell></row><row><cell>noOfSchedules</cell><cell>1</cell></row><row><cell>schedule1</cell><cell>0/5+*+0-23+?+*+*+*&amp;trigger.timeZone\=Etc/GMT</cell></row>
+SenderCred=SFTP_GPQ
+SenderDirectory=../../data/xfer/GPQ/ivalua/inbound
+SenderEndpoint=gpq.sap.whirlpool.com
+SenderFileName=GCP_GSS_CTR_MSTR_DATA_.*\\.csv
+TenantName=https\://glbl-dev.integrationsuite.cfapps.us10-002.hana.ondemand.com/
+TenantType=Non-Prod
+Timeout=1800
+VendorNumber=//Contract/SAPVendorNumber

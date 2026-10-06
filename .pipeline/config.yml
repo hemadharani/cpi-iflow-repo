@@ -1,11 +1,14 @@
----
 general:
-  cpiApiServiceKeyCredentialsId: "cpi"
-  integrationFlowId: "GS3_to_GCS_Contract_PDF_Upload"
+  pipelineVersion: "2.0"
 stages:
   Upload:
-    enabled: false
+    enabled: true
+    # Instructs the 2.0 engine to unpack the zip archive before evaluation
+    unpack: true
+    sapCPILint:
+      enabled: true
+      rulesFile: "cpilint-rules.xml"
   Deploy:
-    enabled: false
-  Integration Test:
+    enabled: true
+  'Integration Test':
     enabled: false

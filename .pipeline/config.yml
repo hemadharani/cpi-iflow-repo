@@ -1,0 +1,6 @@
+# Tells SAP CI/CD to run CPILint checks automatically
+stages:
+  lintCheck:
+    enabled: true
+    tool: "cpilint"
+    rulesFilePath: "cpilint-rules.xml"

@@ -3,4 +3,4 @@ stages:
   lintCheck:
     enabled: true
     tool: "cpilint"
-    rulesFilePath: "cpilint-rules.xml"
+    rulesFile: "cpilint-rules.xml"

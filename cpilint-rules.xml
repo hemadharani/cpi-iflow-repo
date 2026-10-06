@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cpilint-ruleset>
+    <!-- Prerequisite 1: Enforce iFlow ID must start with IF0001 -->
+    <!-- The regex pattern '^IF0001.*' means the string must begin exactly with IF0001 followed by any characters -->
+    <iflow-id-matches-pattern pattern="^IF0001.*"/>
+
+    <!-- Prerequisite 2: All iFlows must contain an Exception Subprocess -->
+    <iflow-must-contain-exception-subprocess/>
+    
+    <!-- Prerequisite 3: Block insecure hardcoded authentication headers -->
+    <disallowed-header-names>
+        <header-name>Authorization</header-name>
+    </disallowed-header-names>
+</cpilint-ruleset>

@@ -1,4 +1,3 @@
-# Tells SAP CI/CD to run CPILint checks automatically
 stages:
   Upload:
     enabled: true
@@ -8,3 +7,6 @@ stages:
     
   Deploy:
     enabled: true
+
+  'Integration Test':
+    enabled: false
